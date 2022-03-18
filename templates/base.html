@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+{% include 'head.html' %}
+
+<body>
+    {% include 'header.html' %}
+
+    <hr>
+    <!--    extends 구문을 사용하기 위한 block-->
+    {% block content %}
+		<!-- 이 사이에 extends한 html 파일 내 block 내용이 들어옴  -->
+    {% endblock %}
+    <hr>
+
+    {% include 'footer.html' %}
+
+</body>
+</html>
+
+{% block js %}
+{% endblock %}
