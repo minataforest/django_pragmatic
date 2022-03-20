@@ -6,6 +6,15 @@
         <h1>test</h1>
     </div>
 
+    <form action="/account/hello_world/" method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-primary" value="POST">
+    </form>
+
+    {% if text %}
+        {{ text }}
+    {% endif %}
+
 {% endblock %}
 
 {% block js %}

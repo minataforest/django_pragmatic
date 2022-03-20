@@ -4,4 +4,8 @@ from django.shortcuts import render
 
 
 def hello_world(request):
-    return render(request, 'accountapp/hello_world.html')
+    if request.method == "GET":
+        print("dddd")
+        return render(request, "accountapp/hello_world.html")
+    else:
+        return render(request, "accountapp/hello_world.html", context={"text": "text"})
