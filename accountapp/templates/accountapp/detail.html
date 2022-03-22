@@ -4,8 +4,14 @@
 <div>
 	<div style="text-align:center; max-width: 500px; margin: 4rem auto;">
 			<p>{{ target_user.date_joined }}</p>
-			<h2 style="font-family: 'NanumSquareB'">{{ target_user.username }}</h2>
-			<h2 style="font-family: 'NanumSquareB'">{{ user.username }}</h2>
+
+			{% if target_user.profile %}
+			<h2>{{ target_user.profile.nickname }}</h2>
+			{% else %}
+			<a href="{% url 'profileapp:create' %}">
+				<p>create profile</p>
+			</a>
+			{% endif %}
 
 			{% if target_user == user %}
 			<a href="{% url 'accountapp:update' pk=user.pk %}">
